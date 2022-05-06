@@ -1,7 +1,15 @@
-from classNmodule import Horse
+import math
 
-hihi = Horse(5,160,'brown',0,10)
-bow = Dog(5,100,'brown',10,10)
+print(math.pi)
+print(math.e)
 
-hihi.sound()
-bow.sound()
+radius = 5.0
+area = (radius ** 2) * math.pi
+theta = math.radians(60)
+
+x = radius * math.cos(theta)
+y = radius * math.sin(theta)
+
+print("area: " + str(area))
+print("x: " + str(x))
+print("y: " + str(y))
