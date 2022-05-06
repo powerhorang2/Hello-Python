@@ -22,9 +22,6 @@ class Animal:
 
 class Horse(Animal):
 
-    def __init__(self, age, height, color, xpos, ypos):
-        Animal.__init__(self, age, height, color, xpos, ypos)
-
     def sound(self):
         print('Neigh')
 
@@ -39,9 +36,6 @@ class Horse(Animal):
 
 
 class Dog(Animal):
-
-    def __init__(self, age, height, color, xpos, ypos):
-        Animal.__init__(self, age, height, color, xpos, ypos)
 
     def sound(self):
         print('Bow-Wow')
