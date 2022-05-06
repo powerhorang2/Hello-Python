@@ -53,5 +53,8 @@ if __name__ == '__main__':
     choco = Dog(10, 100, 'black', 50, 30)
 
     danbi.sound()
-
+    danbi.run(10, 10, 1)
+    print(danbi.velocity)
+    print(danbi.xposition)
+    print(danbi.yposition)
     choco.sound()
