@@ -1,21 +1,19 @@
-def add(*params):  # * 한개
-    print(params)
-    total = 0
-    for param in params:
-        total += param
-    return total
+def arith(a, b):
+    add = a + b
+    sub = a - b
+    return add, sub
 
 
-print(add(10))
-print(add(10, 100))
-print(add(10, 100, 1000))
+i, j = arith(10, 1)
+print(i)
+print(j)
 
+'''
+함수에서 return 문을 통해 반환할 수 있는 결괏값은 언제나 하나입니다.
 
-def print_map(**dicts):  # ** 두개
-    for item in dicts.items():
-        print(item)
+따라서 두 개 이상의 결괏값을 반환하고 싶다면 튜플을 사용해야 합니다.
 
+위 예제의 4번 라인처럼 반환하고 싶은 모든 결괏값을 하나의 튜플로 만들어 반환할 수 있습니다.
 
-print_map(하나=1)
-print_map(one=1, two=2)
-print_map(하나=1, 둘=2, 셋=3)
+이렇게 반환된 결괏값은 7번 라인처럼 튜플의 언패킹을 통해 각각의 변수에 곧바로 대입하여 사용할 수 있습니다.
+'''
