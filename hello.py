@@ -1,6 +1,21 @@
-def total(a=5, b, c=10):
-    print(a + b + c)
+def add(*params):  # * 한개
+    print(params)
+    total = 0
+    for param in params:
+        total += param
+    return total
 
 
-total(1) # 오류 발생 매개변수 b 에 값이 들어가지 않고 a 에 값이 들어감 b 에는 기본값이 없기 때문에 SyntaxError 발생
-# 이처럼 매개변수의 기본값 설정은 매개변수의 목록에서 항상 오른쪽부터 차례대로 명시되어야만 합니다.
+print(add(10))
+print(add(10, 100))
+print(add(10, 100, 1000))
+
+
+def print_map(**dicts):  # ** 두개
+    for item in dicts.items():
+        print(item)
+
+
+print_map(하나=1)
+print_map(one=1, two=2)
+print_map(하나=1, 둘=2, 셋=3)
