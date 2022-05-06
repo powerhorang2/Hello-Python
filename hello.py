@@ -1,11 +1,6 @@
-from turtle import *
+def sub(a, b):
+    print(a - b)
 
-forward(100)
-right(90)
-forward(100)
-right(90)
-forward(100)
-right(90)
-forward(100)
-
-mainloop()
+sub(1, 2)
+sub(a=1, b=2)
+sub(b=1, a=2)
