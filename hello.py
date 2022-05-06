@@ -1,14 +1,7 @@
-def add(a, b):
-    return a + b
+def func():
+    local_var = "지역 변수"
+    print(local_var)
 
 
-print(add(1, 2))
-print((lambda a, b: a+b)(1, 2))
-
-"""
-람다(lambda)란 간단한 함수의 선언과 호출을 하나의 식으로 간략히 표현한 것입니다.
-
-단, add() 함수는 선언된 이 후에 프로그램 내에서라면 언제라도 또다시 호출할 수 있지만, 람다는 단 한 번밖에 사용할 수 없는 차이점을 가집니다.
-
-이처럼 람다는 단 한 번만 사용할 함수를 간단하게 선언하고 호출할 때 매우 유용하게 사용할 수 있습니다.
-"""
+func()
+# print(local_var) # NameError 발생
