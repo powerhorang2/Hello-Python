@@ -1,36 +1,57 @@
-class Alphabets:
-    __str = ""
+import math
 
-    def __init__(self, text):
-        self.text = text
 
-        Alphabets.__str += text
+class Animal:
 
-    def print_class_variable(self):
-        print(Alphabets.__str)
+    def __init__(self, age, height, color, xpos, ypos):
+        self.age = age
+
+        self.height = height
+
+        self.color = color
+
+        self.xposition = xpos
+
+        self.yposition = ypos
+
+        self.velocity = 0
+
+    def sound(self):
+        pass
+
+
+class Horse(Animal):
+
+    def __init__(self, age, height, color, xpos, ypos):
+        Animal.__init__(self, age, height, color, xpos, ypos)
+
+    def sound(self):
+        print('Neigh')
+
+    def run(self, xdistance, ydistance, time):
+        self.xposition += xdistance
+
+        self.yposition += ydistance
+
+        total_distance = math.sqrt((xdistance + xdistance) * (ydistance + ydistance))
+
+        self.velocity = total_distance / time
+
+
+class Dog(Animal):
+
+    def __init__(self, age, height, color, xpos, ypos):
+        Animal.__init__(self, age, height, color, xpos, ypos)
+
+    def sound(self):
+        print('Bow-Wow')
 
 
 if __name__ == '__main__':
-    o1 = Alphabets('p')
+    danbi = Horse(5, 160, 'brown', 0, 0)
 
-    o2 = Alphabets('y')
+    choco = Dog(10, 100, 'black', 50, 30)
 
-    o3 = Alphabets('t')
+    danbi.sound()
 
-    o4 = Alphabets('h')
-
-    o5 = Alphabets('o')
-
-    o6 = Alphabets('n')
-
-    print(o1.text)
-    print(o2.text)
-    print(o3.text)
-    print(o4.text)
-    print(o5.text)
-    print(o6.text)
-
-    o1.print_class_variable()
-
-    o5.print_class_variable()
-
+    choco.sound()
