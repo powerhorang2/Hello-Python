@@ -1,8 +1,36 @@
-PATH = "D:/study/python/tcp school/ch1/PYTHON/temp.txt"
-f = open(PATH, 'a', encoding='utf-8')
+class Alphabets:
+    __str = ""
 
-for i in range(6, 11):
-    line = "%d번째 줄.\n" %i
-    f.write(line)
+    def __init__(self, text):
+        self.text = text
 
-f.close()
+        Alphabets.__str += text
+
+    def print_class_variable(self):
+        print(Alphabets.__str)
+
+
+if __name__ == '__main__':
+    o1 = Alphabets('p')
+
+    o2 = Alphabets('y')
+
+    o3 = Alphabets('t')
+
+    o4 = Alphabets('h')
+
+    o5 = Alphabets('o')
+
+    o6 = Alphabets('n')
+
+    print(o1.text)
+    print(o2.text)
+    print(o3.text)
+    print(o4.text)
+    print(o5.text)
+    print(o6.text)
+
+    o1.print_class_variable()
+
+    o5.print_class_variable()
+
