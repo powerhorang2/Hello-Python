@@ -1,10 +1,14 @@
 def func():
-    global global_var
-    local_var = "지역 변수"
-    print(local_var)
-    print(global_var)
-    
+    var = "지역 변수"
+    print(var)
 
-global_var = "전역 변수"
+
+var = "전역 변수"
+print(var)
 func()
-print(global_var)
+print(var)
+
+"""
+만약 함수 외부에서 선언된 전역 변수와 함수 내부에서 선언된 지역 변수의 이름이 같은 경우에는 다음 예제와 같이 global 키워드를 사용하지 않으면
+전혀 별개의 변수로 취급되므로 주의해야 합니다.
+"""
