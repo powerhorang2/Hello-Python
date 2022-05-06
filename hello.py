@@ -1,19 +1,11 @@
-def func():
-    global var
-    var = "지역 변수"
-    print(var)
+fp = open('D:/study/python/tcp school/ch1/PYTHON/temp.txt', 'r', encoding='utf-8')
 
+file_data = fp.read()
+print(file_data)
 
-var = "전역 변수"
-print(var)
-func()
-print(var)
+fp.close()
 
-"""
-다음 예제의 3번 라인처럼 global 키워드를 사용해야만 지역 변수의 선언이 아닌 전역 변수의 값을 변경하는 구문으로 제대로 동작할 수 있습니다.
-
-but: 
-위의 예제처럼 전역 변수의 값을 함수 내부에서 변경하는 것은 그리 좋은 방법이 아닙니다.
-이러한 행위는 해당 전역 변수를 사용하는 다른 함수의 동작을 의도치 않게 바꾸는 결과를 초래할 수 있으므로,
-변수의 유효 범위를 이해하는 용도로만 사용하시길 바랍니다.
-"""
+with open('D:/study/python/tcp school/ch1/PYTHON/temp.txt', 'r', encoding='utf-8') as fp2:
+    file_data2 = fp2.read()
+    print(file_data2)
+    
