@@ -1,12 +1,27 @@
-n = 3730
-count = 0
+result = 0
+line1 = '5 8 3'
+line2 = '2 4 5 4 6'
 
-# 큰 단위의 화폐부터 차례대로 확인
-coin_types = [500, 100, 50, 10]
+array1 = line1.split(' ')
+array2 = line2.split(' ')
 
-for coin in coin_types:
-    count += n // coin
-    n %= coin
+n = int(array1[0])
+m = int(array1[1])
+k = int(array1[2])
 
-print("count: ", count)
-print("n: ", n)
+array2.sort()
+
+array = []
+for i in array2:
+    array.append(int(i))
+
+i = 0
+for _ in range(m):
+    if i < k:
+        result += array[n - 1]
+        i += 1
+    else:
+        result += array[n - 2]
+        i = 0
+
+print("결과: ", result)
