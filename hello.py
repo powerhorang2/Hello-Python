@@ -1,24 +1,19 @@
 n, k = map(int, input().split())
-
 result = 0
 
-while True:
-    # n 이 1이 되면 종료
-    if n == 1:
-        break
-    # n 이 k 로 나누어 떨어질 때
-    if n % k == 0:
-        n //= k
+# N이 K 이상이라면 K로 계속 나누기
+while n >= k:
+    # N 이 K로 나누어 떨어지지 않는다면 N에서 1씩 빼기
+    while n % k != 0:
+        n -= 1
         result += 1
-    # 나머지가 존재하면 나머지 만큼 n에서 빼기
-    else:
-        remainder = n % k  # 나머지 구함
+    # K로 나누기
+    n //= k
+    result += 1
 
-        # 만약 나눗셈의 몫이 0이면 나머지에 -1 한만큼 횟수 더해줌
-        if n // k == 0:
-            result += (remainder - 1)
-            break
-        n -= remainder
-        result += remainder
+# 마지막으로 남은 수에 대하여 1씩 빼기
+while n > 1:
+    n -= 1
+    result += 1
 
-print('result: ', result)
+print(result)
