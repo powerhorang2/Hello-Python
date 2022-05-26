@@ -27,14 +27,14 @@ while True:
     turn_left()
     nx = x + dx[direction]
     ny = y + dy[direction]
-    turn_time += 1
-    if array[nx][ny] != 1 and history[nx][ny] != 1:
+    turn_time += 1  # if else 문을 사용해서 하는게 좋을 듯
+    if array[nx][ny] != 1 and history[nx][ny] != 1:  # != 1 보다 == 0이 나은듯
         turn_time = 0
         x, y = nx, ny
         history[x][y] = 1
         count += 1
         continue
-    if turn_time == 5:
+    if turn_time == 5:  # 왜 5번이 아니라 4번일까?
         turn_time = 0
         nx = x - dx[direction]
         ny = y - dy[direction]
