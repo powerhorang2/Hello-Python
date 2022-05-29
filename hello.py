@@ -33,6 +33,3 @@ def bfs(x, y):
 
 
 print(bfs(0, 0))
-
-for j in range(n):
-    print(miro[j])
