@@ -1,35 +1,14 @@
 from collections import deque
 
-n, m = map(int, input().split())
+n, m, start = map(int, input().split())
 
-miro = []
+graph = []
 
-for i in range(n):
-    miro.append(list(map(int, input())))
+for _ in m:
+    graph.append(list(map(int, input().split())))
 
-# 방향 (좌, 우, 상, 하)
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
+dfs_visited = [False] * n
 
 
-def bfs(x, y):
-    queue = deque()
-    queue.append((x, y))
-
-    while queue:
-        x, y = queue.popleft()
-        for j in range(4):
-            nx = x + dx[j]
-            ny = y + dy[j]
-            if nx < 0 or ny < 0 or nx >= n or ny >= m:
-                continue
-            if miro[nx][ny] == 0:
-                continue
-            if miro[nx][ny] == 1:
-                miro[nx][ny] = miro[x][y] + 1
-                queue.append((nx, ny))
-
-    return miro[n - 1][m - 1]
-
-
-print(bfs(0, 0))
+def dfs(graph, start):
+    dfs_visited[start - 1] = True
