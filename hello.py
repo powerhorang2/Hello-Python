@@ -1,40 +1,10 @@
-from collections import deque
+array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
 
-n, m, start = map(int, input().split())
+for i in range(len(array)):
+    min_index = i # 가장 작은 원소의 인덱스
+    for j in range(i + 1, len(array)):
+        if array[min_index] > array[j]:
+            min_index = j
+    array[i], array[min_index] = array[min_index], array[i] # 스와프
 
-graph = [[] for _ in range(n + 1)]
-
-for _ in range(m):
-    a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
-
-dfs_visited = [False] * (n + 1)
-bfs_visited = [False] * (n + 1)
-
-for i in range(n + 1):
-    graph[i].sort()
-
-def dfs(graph, start, visited):
-    visited[start] = True
-    print(start, end=' ')
-    for i in graph[start]:
-        if not visited[i]:
-            dfs(graph, i, visited)
-
-def bfs(graph, start, visited):
-    queue = deque([start])
-    visited[start] = True
-    while queue:
-        v = queue.popleft()
-        print(v, end=' ')
-        for i in graph[v]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i] = True
-
-
-dfs(graph, start, dfs_visited)
-print()
-bfs(graph, start, bfs_visited)
-
+print(array)
